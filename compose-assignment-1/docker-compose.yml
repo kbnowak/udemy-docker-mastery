@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  drupalek:
+    image: drupal:8.8.2
+    ports:
+    - 8080:80
+  bazka:
+    image: postgres:12.1
+    environment:
+      POSTGRES_PASSWORD: abc123
