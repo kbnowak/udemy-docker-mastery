@@ -1,1 +1,17 @@
-# create your drupal and postgres config here, based off the last assignment
+version: '2'
+
+services:
+  drupalek:
+    image: custom-drupal
+    build: .
+    ports:
+      - 8080:80
+  bazka:
+    image: postgres:12.1
+    environment:
+      POSTGRES_PASSWORD: abc123
+    volumes:
+    -  drupal-data:/var/lib/postgresql/data
+
+volumes:
+  drupal-data:
